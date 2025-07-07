@@ -12,7 +12,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 
 const Home = () => {
-  const [price, setPrice] = useState(100);
+  const [price, setPrice] = useState(5000000);
 
   useEffect(() => {
     Aos.init({ duration: 2000 });
