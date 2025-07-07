@@ -104,6 +104,11 @@
       background: var(--input-color);
       border-radius: 3rem;
 
+      .react-datepicker-wrapper,
+      .react-datepicker__input-container {
+        width: 100%;
+      }
+
       input {
         background: none;
         border: none;
@@ -111,10 +116,14 @@
         width: 100%;
         font-size: 13px;
         font-weight: 500;
+
         &::placeholder {
           font-size: 13px;
         }
       }
+
+
+      
 
       .icon {
         font-size: 18px;
@@ -153,19 +162,19 @@
       }
     }
   }
+}
 
-  .homeFooterIcons {
-    width: 100%;
-    justify-content: space-between;
+.homeFooterIcons {
+  width: 100%;
+  justify-content: space-between;
 
-    .icon {
-      font-size: 20px;
-      margin: 0 5px;
-      color: var(--white-color);
-      font-weight: 600;
-      &:hover {
-        color: var(--primary-color);
-      }
+  .icon {
+    font-size: 20px;
+    margin: 0 5px;
+    color: var(--white-color);
+    font-weight: 600;
+    &:hover {
+      color: var(--primary-color);
     }
   }
 }
@@ -204,25 +213,22 @@
   }
 }
 
-
 @media screen and (min-width: 600px) {
   .home {
     .homeContent {
       .cardDiv {
         padding: 2rem 1rem;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(3, 1fr);
       }
     }
   }
 }
-
 
 @media screen and (min-width: 940px) {
   .home {
     height: 85vh;
   }
 }
-
 
 @media screen and (min-width: 1240px) {
   .home {
@@ -234,7 +240,7 @@
 
       .cardDiv {
         padding: 2rem 1rem;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(3, 1fr);
 
         .input {
           margin-bottom: 1rem;
@@ -248,10 +254,7 @@
             font-size: 17px;
           }
         }
-
       }
-
     }
-
   }
 }

@@ -97,6 +97,10 @@
   background: var(--input-color);
   border-radius: 3rem;
 }
+.home .cardDiv .input .react-datepicker-wrapper,
+.home .cardDiv .input .react-datepicker__input-container {
+  width: 100%;
+}
 .home .cardDiv .input input {
   background: none;
   border: none;
@@ -143,17 +147,18 @@
 .home .cardDiv .searchOption span {
   font-size: 13px;
 }
-.home .homeFooterIcons {
+
+.homeFooterIcons {
   width: 100%;
   justify-content: space-between;
 }
-.home .homeFooterIcons .icon {
+.homeFooterIcons .icon {
   font-size: 20px;
   margin: 0 5px;
   color: var(--white-color);
   font-weight: 600;
 }
-.home .homeFooterIcons .icon:hover {
+.homeFooterIcons .icon:hover {
   color: var(--primary-color);
 }
 

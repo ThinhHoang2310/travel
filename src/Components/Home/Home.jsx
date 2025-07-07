@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import "./home.scss";
 import video from "../../assets/video-banner-travel-web.mp4";
 import { GrLocation } from "react-icons/gr";
@@ -12,6 +14,16 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 
 const Home = () => {
+  const [date, setDate] = useState(new Date());
+
+  const handleDateSelect = (date) => {
+    // Xử lý khi người dùng click ngày (nếu cần thêm logic)
+  };
+
+  const handleDateChange = (date) => {
+    setDate(date); // Cập nhật ngày khi có thay đổi
+  };
+
   const [price, setPrice] = useState(5000000);
 
   useEffect(() => {
@@ -27,7 +39,6 @@ const Home = () => {
         autoPlay
         loop
         playsInline
-        
         preload="auto"
         type="video/mp4"
       ></video>
@@ -53,7 +64,14 @@ const Home = () => {
           <div className="dateInput">
             <label htmlFor="date">Ngày khởi hành </label>
             <div className="input flex">
-              <input type="date" />
+              {/* <input type="date" /> */}
+
+              <DatePicker
+                selected={date}
+                onSelect={handleDateSelect}
+                onChange={handleDateChange}
+                 dateFormat="dd/MM/yyyy" 
+              />
             </div>
           </div>
 
