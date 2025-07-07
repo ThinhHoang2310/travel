@@ -21,7 +21,16 @@ const Home = () => {
   return (
     <section className="home">
       <div className="overlay"></div>
-      <video src={video} muted autoPlay loop type="video/mp4"></video>
+      <video
+        src={video}
+        muted
+        autoPlay
+        loop
+        playsInline
+        
+        preload="auto"
+        type="video/mp4"
+      ></video>
 
       <div className="homeContent container">
         <div className="textDiv">
@@ -53,7 +62,7 @@ const Home = () => {
               <label htmlFor="price">Giá cao nhất:</label>
               <h3 className="total">
                 {Number(price).toLocaleString("vi-VN")} đ
-                </h3>
+              </h3>
             </div>
 
             <div className="input flex">
