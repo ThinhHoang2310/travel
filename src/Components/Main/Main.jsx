@@ -6,18 +6,18 @@ import { CiLocationOn } from "react-icons/ci";
 import { LuClipboardCheck } from "react-icons/lu";
 
 // Import images
-import img from "../../Assets/VHL.png";
-import img2 from "../../Assets/PQ.png";
-import img3 from "../../Assets/BT.png";
-import img4 from "../../Assets/DL.png";
-import img5 from "../../Assets/MCC.png";
-import img6 from "../../Assets/HSD.png";
-import img7 from "../../Assets/HG.png";
-import img8 from "../../Assets/TG.png";
-import img9 from "../../Assets/NB.png";
-import img10 from "../../Assets/CD.png";
-import img11 from "../../Assets/Hue.png";
-import img12 from "../../Assets/BNH.png";
+import img from "../../assets/VHL.png";
+import img2 from "../../assets/PQ.png";
+import img3 from "../../assets/BT.png";
+import img4 from "../../assets/DL.png";
+import img5 from "../../assets/MCC.png";
+import img6 from "../../assets/HSD.png";
+import img7 from "../../assets/HG.png";
+import img8 from "../../assets/TG.png";
+import img9 from "../../assets/NB.png";
+import img10 from "../../assets/CD.png";
+import img11 from "../../assets/Hue.png";
+import img12 from "../../assets/BNH.png";
 
 import Aos from "aos";
 import "aos/dist/aos.css";
