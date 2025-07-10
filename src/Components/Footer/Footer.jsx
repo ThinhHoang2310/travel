@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./footer.scss";
 import video from "../../assets/video-footer-travel-web.mp4";
 
@@ -19,6 +19,45 @@ const Footer = () => {
     Aos.init({ duration: 2000 });
   }, []);
 
+  const [email, setEmail] = useState("");
+  const [isError, setIsError] = useState(false);
+  const [popupMessage, setPopupMessage] = useState("");
+  const [popupType, setPopupType] = useState("");
+  const timeoutRef = useRef(null);
+  const inputRef = useRef(null);
+
+  // Hàm kiểm tra định dạng email
+  const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  const shoot = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+
+
+    if (!email.trim()) {
+      setPopupMessage("Vui lòng nhập email!");
+      setPopupType("error");
+    } else if (!isValidEmail(email)) {
+      setPopupMessage("Email không hợp lệ!");
+      setPopupType("error");
+    } else {
+      setPopupMessage(
+        "Cảm ơn bạn đã quan tâm, VivuVietNam sẽ sớm liên hệ lại với bạn !"
+      );
+      setPopupType("success");
+      setEmail("");
+    }
+
+    timeoutRef.current = setTimeout(() => {
+      setPopupMessage("");
+      setPopupType("");
+    }, 4000);
+  };
+
+  const handleInputChange = (e) => {
+    setEmail(e.target.value);
+    setIsError(false); // xóa lỗi khi bắt đầu gõ lại
+  };
+
   return (
     <section className="footer">
       <div className="videoDiv">
@@ -28,7 +67,6 @@ const Footer = () => {
           loop
           muted
           playsInline
-          
           preload="auto"
           type="video/mp4"
         ></video>
@@ -41,13 +79,23 @@ const Footer = () => {
             <h2>Đồng hành cùng Vivu</h2>
           </div>
 
-          <div className="inputDiv flex">
+          <div className="inputDiv flex" data-aos="fade-up">
             <input
-              data-aos="fade-up"
+              ref={inputRef}
+              className={isError ? "error-input" : ""}
               type="text"
-              placeholder="Nhập địa chỉ Email"
+              placeholder="Nhập địa chỉ Email" 
+              value={email}
+              onChange={handleInputChange}
             />
-            <button data-aos="fade-up" className="btn flex" type="submit">
+           
+
+            <button
+              onClick={shoot}
+              data-aos="fade-up"
+              className="btn flex"
+              type="submit"
+            >
               GỬI
               <FiSend className="icon" />
             </button>
@@ -191,6 +239,10 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      {popupMessage && (
+        <div className={`popup ${popupType}`}>{popupMessage}</div>
+      )}
     </section>
   );
 };

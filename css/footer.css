@@ -195,6 +195,46 @@
   color: var(--white-color-deam);
   text-align: center;
 }
+.footer .popup {
+  position: fixed;
+  top: 20px;
+  max-width: 90%;
+  background-color: var(--white-color-deam);
+  color: var(--white-color);
+  padding: 15px 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  animation: fadeInOut 4s ease forwards;
+}
+.footer .popup.success {
+  background: var(--gradient-color);
+}
+.footer .popup.error {
+  background-color: #f44336;
+}
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
 
 @media screen and (min-width: 500px) {
   .footer .secContent .footerCard .footerLinks {
