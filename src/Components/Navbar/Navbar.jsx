@@ -6,7 +6,7 @@ import { TbGridDots } from "react-icons/tb";
 
 
 
-const Navbar = () => {
+const Navbar = ({ onHomeClick, onMainClick }) => {
   const [active, setActive] = useState('navBar');
   // Toggle Navbar
   const showNav = () => {
@@ -34,27 +34,21 @@ const Navbar = () => {
         <div className= {active}>
           <ul className="navLists flex">
             <li className="navItem">
-              <a href="#" className="navLink">
+              <button onClick={onHomeClick}  className="navLink">
                 Trang chủ
-              </a>
+              </button>
             </li>
 
             <li className="navItem">
-              <a href="#" className="navLink">
+              <button onClick={onMainClick} className="navLink">
                 Hành trình
-              </a>
-            </li>
-
-            {/* <li className="navItem">
-              <a href="#" className="navLink">
-                Mua sắm
-              </a>
-            </li> */}
+              </button>
+            </li>          
 
             <li className="navItem">
-              <a href="#" className="navLink">
+              <button  className="navLink">
                 Về chúng tôi
-              </a>
+              </button>
             </li>
 
             <li className="navItem">

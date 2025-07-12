@@ -71,6 +71,11 @@
         .navItem {
           padding: 0.5rem 0;
 
+          button {
+            border: none;
+            cursor: pointer;
+          }
+
           .navLink {
             color: var(--text-color);
             font-size: 0.9rem;
@@ -139,6 +144,11 @@
         justify-content: center;
 
         .navItem {
+          button {
+            border: none;
+            cursor: pointer;
+          }
+
           min-width: 0;
           .navLink {
             color: var(--text-color);
@@ -193,7 +203,6 @@
     .logo {
       font-size: 0.8rem;
     }
-
   }
 }
 

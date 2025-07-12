@@ -68,6 +68,10 @@
   .header .navBar .navLists .navItem {
     padding: 0.5rem 0;
   }
+  .header .navBar .navLists .navItem button {
+    border: none;
+    cursor: pointer;
+  }
   .header .navBar .navLists .navItem .navLink {
     color: var(--text-color);
     font-size: 0.9rem;
@@ -123,6 +127,10 @@
   }
   .header .navBar .navLists .navItem {
     min-width: 0;
+  }
+  .header .navBar .navLists .navItem button {
+    border: none;
+    cursor: pointer;
   }
   .header .navBar .navLists .navItem .navLink {
     color: var(--text-color);
